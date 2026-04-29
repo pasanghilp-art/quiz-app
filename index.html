@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Science Quiz — Pasang Tamang</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="app">
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <!-- Back link -->
+    <a href="https://pasanghilp-art.github.io" class="back-link">← Portfolio</a>
+
+    <!-- START SCREEN -->
+    <div class="screen active" id="startScreen">
+      <span class="start-icon">🔬</span>
+      <h1 class="start-title">Science & Nature Quiz</h1>
+      <p class="start-sub">Test your science knowledge — 15 questions, mixed difficulty!</p>
+
+      <div class="info-row">
+        <div class="info-card">
+          <span>📝</span>
+          <p>Questions</p>
+          <strong>15</strong>
+        </div>
+        <div class="info-card">
+          <span>⏱️</span>
+          <p>Per question</p>
+          <strong>20 sec</strong>
+        </div>
+        <div class="info-card">
+          <span>🎯</span>
+          <p>Topic</p>
+          <strong>Science</strong>
+        </div>
+      </div>
+
+      <div class="difficulty-info">
+        <span class="diff-pill easy">Easy = 10pts</span>
+        <span class="diff-pill medium">Medium = 15pts</span>
+        <span class="diff-pill hard">Hard = 20pts</span>
+      </div>
+
+      <button class="btn btn-primary" id="startBtn">Start Quiz →</button>
+    </div>
+
+    <!-- LOADING SCREEN -->
+    <div class="screen" id="loadingScreen">
+      <div class="loading-content">
+        <div class="spinner"></div>
+        <p class="loading-text">Fetching science questions...</p>
+      </div>
+    </div>
+
+    <!-- ERROR SCREEN -->
+    <div class="screen" id="errorScreen">
+      <span class="start-icon">⚠️</span>
+      <h2 class="start-title">Oops!</h2>
+      <p class="start-sub" id="errorText">Could not load questions. Using offline questions instead.</p>
+      <button class="btn btn-primary" id="retryBtn">Try Again</button>
+    </div>
+
+    <!-- QUIZ SCREEN -->
+    <div class="screen" id="quizScreen">
+      <div class="quiz-top">
+        <div class="q-counter" id="qCounter">Question 1 / 15</div>
+        <div class="timer" id="timer">⏱ 20</div>
+        <div class="score-badge" id="scoreBadge">⭐ 0</div>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill" style="width:0%"></div>
+      </div>
+
+      <span class="diff-badge easy" id="diffBadge">Easy</span>
+      <div class="question-text" id="questionText">Loading question...</div>
+      <div class="options" id="options"></div>
+      <div class="feedback" id="feedback"></div>
+      <button class="next-btn" id="nextBtn">Next →</button>
+    </div>
+
+    <!-- RESULTS SCREEN -->
+    <div class="screen" id="resultScreen">
+      <span class="result-icon" id="resultIcon">🏆</span>
+      <h2 class="result-title" id="resultTitle">Quiz Complete!</h2>
+      <p class="result-sub" id="resultSub">Here's how you did</p>
+
+      <div class="result-score">
+        <div class="result-num" id="resultNum">0</div>
+        <div class="result-label">points scored</div>
+        <div class="result-pct" id="resultPct">0% correct</div>
+      </div>
+
+      <div class="result-stats">
+        <div class="rs">
+          <span class="rs-num green" id="rsCorrect">0</span>
+          <span class="rs-lbl">Correct</span>
+        </div>
+        <div class="rs">
+          <span class="rs-num red" id="rsWrong">0</span>
+          <span class="rs-lbl">Wrong</span>
+        </div>
+        <div class="rs">
+          <span class="rs-num yellow" id="rsSkipped">0</span>
+          <span class="rs-lbl">Skipped</span>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" id="playAgainBtn">Play Again 🔄</button>
+      <button class="btn btn-secondary" id="homeBtn">← Back to Start</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
